@@ -2,9 +2,7 @@ function insert(num) {
     var numero = (document.getElementById('resultado')).innerHTML;
     (document.getElementById('resultado')).innerHTML = numero + num;
 }
-function a() {
-    console.log('aaaaa');
-}
+
 function clean() {
     (document.getElementById('resultado')).innerHTML = "";
 }
