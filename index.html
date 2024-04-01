@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Calculadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <title>Calculadora</title>
 </head>
 <body>
     <div class="background">
@@ -18,34 +20,34 @@
                 </div>
                 <div class="container-buttons">
                     <div class="buttons-column">
-                        <button class="botao" onclick="clean()">AC</button>
-                        <button class="botao" onclick="insert('1')">1</button>
-                        <button class="botao" onclick="insert('4')">4</button>
-                        <button class="botao" onclick="insert('7')">7</button>
-                        <div class="icon-container">
+                        <button class="button" onclick="clean()">AC</button>
+                        <button class="button" onclick="insert('1')">1</button>
+                        <button class="button" onclick="insert('4')">4</button>
+                        <button class="button" onclick="insert('7')">7</button>
+                        <div class="icon-container" onclick="back()">
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
                     </div>
                     <div class="buttons-column">
-                        <button disabled class="botao" onclick="back()">()</button>
-                        <button class="botao" onclick="insert('2')">2</button>
-                        <button class="botao" onclick="insert('5')">5</button>
-                        <button class="botao" onclick="insert('8')">8</button>
-                        <button class="botao" onclick="insert('0')">0</button>
+                        <button disabled class="button">( )</button>
+                        <button class="button" onclick="insert('2')">2</button>
+                        <button class="button" onclick="insert('5')">5</button>
+                        <button class="button" onclick="insert('8')">8</button>
+                        <button class="button" onclick="insert('0')">0</button>
                     </div>
                     <div class="buttons-column">
-                        <button disabled class="botao" onclick="insert('/')">%</button>
-                        <button class="botao" onclick="insert('3')">3</button>
-                        <button class="botao" onclick="insert('6')">6</button>  
-                        <button class="botao" onclick="insert('9')">9</button>
-                        <button class="botao" onclick="insert('.')">.</button>
+                        <button disabled class="button">%</button>
+                        <button class="button" onclick="insert('3')">3</button>
+                        <button class="button" onclick="insert('6')">6</button>  
+                        <button class="button" onclick="insert('9')">9</button>
+                        <button class="button" onclick="insert('.')">.</button>
                     </div>
                     <div class="buttons-column border">
-                        <button class="botao" onclick="insert('+')">+</button>
-                        <button class="botao" onclick="insert('-')">-</button>
-                        <button class="botao" onclick="insert('*')">X</button>
-                        <button class="botao" onclick="insert('/')">/</button>
-                        <button class="botao equal" onclick="calcular()">=</button>
+                        <button class="button" onclick="insert('+')">+</button>
+                        <button class="button" onclick="insert('-')">-</button>
+                        <button class="button" onclick="insert('*')">X</button>
+                        <button class="button" onclick="insert('/')">/</button>
+                        <button class="button equal" onclick="calcular()">=</button>
                     </div>
             </div>
             </div>
