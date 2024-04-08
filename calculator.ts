@@ -3,19 +3,51 @@ const insert = (num: string) => {
   (document.getElementById('resultado') as HTMLElement).innerHTML = numero + num;
 }
 
-const clean = () => {
-  (document.getElementById('resultado') as HTMLElement).innerHTML = "";
+const clear = ()  => {
+  (document.getElementById('result') as HTMLElement).innerHTML = ''
+  (document.querySelector('.counts-header') as HTMLElement).innerHTML = ''
 }
-const back = () => {
-  var resultado = (document.getElementById('resultado') as HTMLElement).innerHTML;
-  (document.getElementById('resultado') as HTMLElement).innerHTML = resultado.substring(0, resultado.length - 1);
+const back = ()  => {
+  const resultado = (document.querySelector('.counts-header') as HTMLElement).innerHTML
+  (document.querySelector('.counts-header') as HTMLElement).innerHTML = resultado.substring(
+    0,
+    resultado.length - 1
+  )
 }
-const calcular = () => {
-  var resultado = (document.getElementById('resultado') as HTMLElement).innerHTML;
-  if (resultado) {
-      (document.getElementById('resultado') as HTMLElement).innerHTML = eval(resultado);
+
+const addPercentage = () => {
+  const numero = (document.querySelector('.counts-header') as HTMLElement).innerHTML
+  (document.querySelector('.counts-header') as HTMLElement).innerHTML = numero + '%'
+}
+
+const verifyPercentage = () => {
+  const header = (document.querySelector('.counts-header') as HTMLElement).innerHTML
+  const countSplitted = header.split('%')
+  if(countSplitted[1]) {
+    const countResult =  (countSplitted[0] * countSplitted[1]) / 100
+    (document.getElementById('result') as HTMLElement).innerHTML = eval(countResult)
+  }else {
+    (document.getElementById('result') as HTMLElement).innerHTML = eval(header)
   }
-  else {
-      (document.getElementById('resultado') as HTMLElement).innerHTML = "";
+
+}
+
+const addParentheses = () => {
+  let equation = (document.querySelector('.counts-header') as HTMLElement).innerHTML
+  const equationSplitted = equation.split('')
+  if(equationSplitted.some(str => str === "(")) {
+    (document.querySelector('.counts-header') as HTMLElement).innerHTML = equation + ")"
+  }else {
+    (document.querySelector('.counts-header') as HTMLElement).innerHTML = equation = equation + "("
+  }
+}
+
+const calculate = ()  => {
+  const result = (document.querySelector('.counts-header') as HTMLElement).innerHTML
+  if (result) {
+    verifyPercentage()
+  } else {
+    (document.getElementById('result') as HTMLElement).innerHTML = ''
+    (document.querySelector('.counts-header') as HTMLElement).innerHTML = ''
   }
 }
